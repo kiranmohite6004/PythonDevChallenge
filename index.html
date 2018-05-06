@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>
+            file upload and processing
+        </title>
+    </head>
+    <h1>Challenge 1</h2>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <form action="{% url "myapp:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload file"
+                   name="filename"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+
+             {{ data }}&nbsp;&nbsp;
+
+    </body>
+
+    <hr>
+
+    <h1>Challenge 2</h2>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <form action="{% url "myapp:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            IP Adress with port:<br>
+            <input type="text"
+                   title="ip"
+                   name="ip"
+                   required="required">
+            <br>Username:<br>
+            <input type="text"
+                   title="username"
+                   name="username"
+                   required="required">
+            <br>Password:<br>
+            <input type="password"
+                   title="paswword"
+                   name="password"
+                   required="required">            
+            <p>
+            <input type="submit"
+                   value="Submit"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+    </body>
+</html>
